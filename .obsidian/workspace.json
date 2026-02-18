@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
-                "mode": "source",
+                "file": "2026-02-18/03_map_cleaner_hino_jt128_run.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "03_map_cleaner_hino_jt128_run"
             }
           }
         ],
@@ -200,6 +200,12 @@
   },
   "active": "5ec1c377d54b1b0b",
   "lastOpenFiles": [
+    "splat_30000.html",
+    "STYLE_GUIDE.md",
+    "README.md.tmp.13830.1771410921814",
+    "2026-02-18/README.md.tmp.13830.1771410904578",
+    "2026-02-18/03_map_cleaner_hino_jt128_run.md",
+    "README.md",
     "2026-02-17/01_glim_save_frame_plugin.md",
     "STYLE_GUIDE.md.tmp.15003.1771406535349",
     "STYLE_GUIDE.md.tmp.15003.1771406518563",
@@ -207,7 +213,6 @@
     "STYLE_GUIDE.md.tmp.15003.1771406498122",
     "STYLE_GUIDE.md.tmp.15003.1771406488963",
     "STYLE_GUIDE.md.tmp.15003.1771406471863",
-    "README.md",
     "README.md.tmp.15003.1771406441451",
     "2026-02-18/README.md",
     "2026-02-17/README.md",
@@ -215,9 +220,6 @@
     "2026-02-18/02_map_cleaner_algorithm.md",
     "2026-02-18/2026-02-18.md",
     "2026-02-17/2026-02-17.md",
-    "STYLE_GUIDE.md",
-    "2026-02-17/2026-02-17.md.tmp.15003.1771400638481",
-    "2026-02-17/02_hesai_jt128_ros2.md.tmp.15003.1771400615727",
     "2026-02-17/03_iceoryx_shared_memory.md",
     "2026-02-18/01_map_cleaner_ros2_migration.md",
     "Untitled.md",
