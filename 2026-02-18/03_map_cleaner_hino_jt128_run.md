@@ -108,6 +108,45 @@
 
 ---
 
+## RViz での可視化に関する補足
+
+### `/in_process` トピックの2回再生
+
+`in_process_visualization: true` の場合、RViz 上で点群が2回再生されるように見える。これは以下の2ステップが同じ `/in_process` トピックに全フレームを順次 publish するためである。
+
+| ステップ | 処理内容 | フレームループ |
+|---------|----------|--------------|
+| Step 1: GroundSegmentation | PatchWorkpp で地面分離 | **全フレーム再生（1回目）** |
+| Step 2: GridMapBuilder | 標高マップ構築 | なし |
+| Step 3: VarianceFilter | 分散フィルタ | なし |
+| Step 4: 1st BGKFilter | BGK補間 | なし |
+| Step 5: TrajectoryFilter | 軌跡上の法線フィルタ | なし |
+| Step 6: 2nd BGKFilter | BGK補間（2回目） | なし |
+| Step 7: MedianFilter | メディアンフィルタ | なし |
+| Step 8: DivideByTerrain | 地形による分類 | なし |
+| Step 9: MovingPointIdentification | 動的物体検出 | **全フレーム再生（2回目）** |
+
+Step 2～8 は grid_map 上の演算のためフレーム再生は発生しない。
+
+### `/grid_map` トピックの有効化
+
+`/grid_map` トピック（`grid_map_msgs/GridMap`）は元コードでデフォルト無効であった。
+
+- **原因**: `src/map_cleaner.cpp` で `#define PUBLISH_GRID_MAP` がコメントアウトされていた
+- **修正**: コメントを外して有効化し、リビルド
+
+```cpp
+// 変更前
+// #define PUBLISH_GRID_MAP
+
+// 変更後
+#define PUBLISH_GRID_MAP
+```
+
+有効化後、RViz2 の GridMap ディスプレイ（`grid_map_rviz_plugin/GridMap`、トピック `/grid_map`）で標高マップを確認できる。rviz.rviz にはデフォルト無効の状態で設定済みであるため、RViz2 上でチェックを入れるだけで表示される。
+
+---
+
 ## 実行コマンド
 
 ```bash

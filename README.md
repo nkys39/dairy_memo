@@ -4,6 +4,8 @@
 - MapCleaner を ROS1 から ROS2 Jazzy に移行
 - MapCleaner のアルゴリズム処理フローを整理
 - hino_jt128 データで MapCleaner 実行（OOM対策・正常完了）
+- MapCleaner 出力を Potree Web ビューア化（GitHub Pages 構成設計）
+- Potree ワークフローのディレクトリ整理（パイプライン自動化）
 
 → [詳細](2026-02-18/)
 
