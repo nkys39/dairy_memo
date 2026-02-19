@@ -4,4 +4,4 @@
 - MapCleaner のアルゴリズム処理フロー（地面分離→標高マップ→フィルタリング→動的物体検出）を整理 → [詳細](02_map_cleaner_algorithm.md)
 - hino_jt128 データで MapCleaner 実行（OOMクラッシュ→設定調整→全パイプライン正常完了） → [詳細](03_map_cleaner_hino_jt128_run.md)
 - MapCleaner 出力を Potree Web ビューア化（PCD→LAS→オクツリー変換、カスタムUI、GitHub Pages 構成設計） → [詳細](04_potree_pointcloud_viewer.md)
-- Potree ワークフローのディレクトリ整理（tools/staging/potree_viewer/ に分離、パイプライン自動化） → [詳細](05_potree_directory_reorganization.md)
+- Potree ワークフローのディレクトリ整理（tools/staging/map_cleaner_potree/ に分離、パイプライン自動化） → [詳細](05_potree_directory_reorganization.md)

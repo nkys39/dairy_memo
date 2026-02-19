@@ -36,7 +36,7 @@ hino_jt128_output/           ← データセット固有名に依存
 │   ├── PROCEDURE.md            # 手順書
 │   └── .venv/                  # Python仮想環境
 ├── staging/                 # 中間LASファイル置き場（使い捨て）
-└── potree_viewer/           # GitHub Pagesデプロイ対象（98MB）
+└── map_cleaner_potree/           # GitHub Pagesデプロイ対象（98MB）
     ├── index.html / viewer.html / libs/ / data/
 ```
 
@@ -48,7 +48,7 @@ hino_jt128_output/           ← データセット固有名に依存
 
 | 移動元 | 移動先 | 理由 |
 |--------|--------|------|
-| `hino_jt128_output/potree_output/` | `potree_viewer/` | デプロイ対象をトップレベルに |
+| `hino_jt128_output/potree_output/` | `map_cleaner_potree/` | デプロイ対象をトップレベルに |
 | `hino_jt128_output/convert_pcd_to_las_v12.py` | `tools/convert_pcd_to_las.py` | 共有ツールとして独立+リネーム |
 | `hino_jt128_output/PROCEDURE.md` | `tools/PROCEDURE.md` | 共有ドキュメントとして独立 |
 
@@ -76,7 +76,7 @@ python convert_pcd_to_las.py /home/user/map/hino_jt128_output
 処理フロー:
 1. `convert_pcd_to_las.py` で PCD → LAS（staging/ に出力）
 2. `PotreeConverter` で LAS → オクツリー（/tmp に一時出力）
-3. `potree_viewer/data/<name>/` に metadata.json, hierarchy.bin, octree.bin をコピー
+3. `map_cleaner_potree/data/<name>/` に metadata.json, hierarchy.bin, octree.bin をコピー
 4. 中間ファイル（LAS、一時ディレクトリ）を自動削除
 5. `index.html` の DATASETS 配列編集を案内表示
 
@@ -96,7 +96,7 @@ venv はパスがハードコードされるため、移動ではなく `tools/.
 
 手順書内のすべてのパス参照を新構成に合わせて更新:
 - スクリプト・venv 関連: `hino_jt128_output/` → `tools/`
-- ビューア関連: `potree_output/` → `potree_viewer/`
+- ビューア関連: `potree_output/` → `map_cleaner_potree/`
 - 新データセット追加手順に `run_pipeline.sh` の使い方を追記
 
 ---
@@ -111,14 +111,14 @@ cd /home/user/map/tools
 
 # 3. index.html の DATASETS 配列にエントリ追加（手動）
 # 4. ローカル確認
-cd /home/user/map/potree_viewer && python3 -m http.server 8080
+cd /home/user/map/map_cleaner_potree && python3 -m http.server 8080
 ```
 
 ---
 
 ## 検証結果
 
-- `potree_viewer/` でローカルサーバー起動 → `viewer.html?cloud=hino_jt128` が正常表示
-- `du -sh potree_viewer/` → 98MB（想定通り）
+- `map_cleaner_potree/` でローカルサーバー起動 → `viewer.html?cloud=hino_jt128` が正常表示
+- `du -sh map_cleaner_potree/` → 98MB（想定通り）
 - `hino_jt128_output/` に PCD ファイルのみ残存（217MB）
 - `convert_pcd_to_las.py --help` が正常動作
