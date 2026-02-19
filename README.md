@@ -2,6 +2,7 @@
 
 ## 2026-02-19
 - Claude Code カスタムスキル `/dairy-memo` を作成（セッション作業の自動記録）
+- atc_ws を ROS2 Humble から Jazzy にポーティング
 
 → [詳細](2026-02-19/)
 
