@@ -1,5 +1,10 @@
 # dairy_memo
 
+## 2026-02-19
+- Claude Code カスタムスキル `/dairy-memo` を作成（セッション作業の自動記録）
+
+→ [詳細](2026-02-19/)
+
 ## 2026-02-18
 - MapCleaner を ROS1 から ROS2 Jazzy に移行
 - MapCleaner のアルゴリズム処理フローを整理
